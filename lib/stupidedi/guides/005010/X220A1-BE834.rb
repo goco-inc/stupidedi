@@ -76,21 +76,21 @@ module Stupidedi
                 b::Element(e::Required,    "TPA or Broker Identification Code", b::MaxLength(80)),
                 b::Element(e::NotUsed,     "Entity Relationship Code"),
                 b::Element(e::NotUsed,     "Entity Identifier Code")
+              ),
+              d::LoopDef.build("1100C - TPA/BROKER ACCOUNT INFORMATION", d::RepeatCount.bounded(1),
+                b::Segment(1200, s::ACT, "TPA/Broker Account Information", r::Situational, d::RepeatCount.bounded(1),
+                  b::Element(e::Required,    "TPA or Broker Account Number", b::MaxLength(35)),
+                  b::Element(e::NotUsed,     "Name"),
+                  b::Element(e::NotUsed,     "Identification Code Qualifier"),
+                  b::Element(e::NotUsed,     "Identification Code"),
+                  b::Element(e::NotUsed,     "Account Number Qualifier"),
+                  b::Element(e::Situational, "TPA or Broker Account Number", b::MaxLength(35)),
+                  b::Element(e::NotUsed,     "Description"),
+                  b::Element(e::NotUsed,     "Payment Method Type Code"),
+                  b::Element(e::NotUsed,     "Benefit Status Code")
+                )
               )
-            ),
-            d::LoopDef.build("1100C - TPA/BROKER ACCOUNT INFORMATION", d::RepeatCount.bounded(1),
-              b::Segment(1200, s::ACT, "TPA/Broker Account Information", r::Situational, d::RepeatCount.bounded(1),
-                b::Element(e::Required,    "TPA or Broker Account Number", b::MaxLength(35)),
-                b::Element(e::NotUsed,     "Name"),
-                b::Element(e::NotUsed,     "Identification Code Qualifier"),
-                b::Element(e::NotUsed,     "Identification Code"),
-                b::Element(e::NotUsed,     "Account Number Qualifier"),
-                b::Element(e::Situational, "TPA or Broker Account Number", b::MaxLength(35)),
-                b::Element(e::NotUsed,     "Description"),
-                b::Element(e::NotUsed,     "Payment Method Type Code"),
-                b::Element(e::NotUsed,     "Benefit Status Code")
-              )
-            )
+            )            
           ),
 
           d::TableDef.detail("Table 2 - Detail",

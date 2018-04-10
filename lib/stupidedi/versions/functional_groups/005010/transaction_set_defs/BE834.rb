@@ -28,10 +28,11 @@ module Stupidedi
                 s::N1.use(700, r::Mandatory, d::RepeatCount.bounded(1))),
 
               d::LoopDef.build("1000C", d::RepeatCount.bounded(2),
-                s::N1.use(700, r::Optional, d::RepeatCount.bounded(1))),
-
-              d::LoopDef.build("1100C", d::RepeatCount.bounded(1),
-                s::ACT.use(1200, r::Optional, d::RepeatCount.bounded(1))),
+                s::N1.use(700, r::Optional, d::RepeatCount.bounded(1)),
+                
+                d::LoopDef.build("1100C", d::RepeatCount.bounded(1),
+                  s::ACT.use(1200, r::Optional, d::RepeatCount.bounded(1))),
+              ),
             ),
 
             d::TableDef.detail("Table 2 - Detail",
