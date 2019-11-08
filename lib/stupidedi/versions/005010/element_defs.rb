@@ -2207,7 +2207,18 @@ module Stupidedi
             "PRA" => "Practitioners",
             "STD" => "Short-Term Disability",
             "UR"  => "Utilization Review",
-            "VIS" => "Vision"))
+            "VIS" => "Vision",
+            'BLF' => 'Basic Life (non-standard)',
+            'ADD' => 'Basic Life AD&D (non-standard)',
+            'DLF' => 'Dependent Life (non-standard)',
+            'EVL' => 'Employee Voluntary Term Life (non-standard)',
+            'EVA' => 'Employee Voluntary AD&D (non-standard)',
+            'SVL' => 'Spouse Voluntary Term Life (non-standard)',
+            'SVA' => 'Spouse Voluntary AD&D (non-standard)',
+            'CVL' => 'Child Voluntary Term Life (non-standard)',
+            'ECI' => 'Employee Critical Illness (non-standard)',
+            'SCI' => 'Spouse Critical Illness (non-standard)',
+            'CCI' => 'Child Critical Illness ACC - Accident (non-standard)'))
         E1207 = t::ID.new(:E1207, "Coverage Level Code"                  , 3, 3,
           s::CodeList.build(
             "CHD" => "Children Only",
